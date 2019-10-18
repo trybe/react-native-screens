@@ -117,7 +117,13 @@
       if (screen.active && [_activeScreens containsObject:screen]) {
         [self detachScreen:screen];
         // disable interactions for the duration of transition
-        screen.userInteractionEnabled = NO;
+        // screen.userInteractionEnabled = NO;
+        
+        //trybe override: disable logic above to fix issue where:
+        //if react-navigation has transparentCard set to true,
+        //and user opens 3 screens with a modal as the third screen,
+        //all touchables on 2nd screen will no longer register
+        screen.userInteractionEnabled = YES;
       }
     }
 
