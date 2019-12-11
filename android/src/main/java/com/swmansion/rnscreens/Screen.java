@@ -72,7 +72,7 @@ public class Screen extends ViewGroup implements ReactPointerEventsView {
 
   @Override
   public PointerEvents getPointerEvents() {
-    return return PointerEvents.AUTO;
+    return PointerEvents.AUTO;
   }
 
   @Override
